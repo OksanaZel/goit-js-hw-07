@@ -12,31 +12,16 @@
 Количество элементов: 4 */
 
 
-// const categoriesList = document.querySelector('#categories');
-// console.log(`В списке ${categoriesList.children.length} категории.`);
+const categoriesList = document.querySelector('#categories');
+console.log(`В списке ${categoriesList.children.length} категории.`);
 
-// const itemOfCategoriesList = categoriesList.querySelectorAll('.item')
-// console.log(itemOfCategoriesList);
-// console.log(itemOfCategoriesList.children);
+const itemOfCategoriesList = categoriesList.querySelectorAll('.item');
 
-// for (let i = 0; i < itemOfCategoriesList.length; i += 1) {
-//     const titleItem = itemOfCategoriesList.firstChild[i].textContent;
-//     console.log(titleItem);
-    
-// }
+for (let i = 0; i < itemOfCategoriesList.length; i += 1) {
+    const itemTitle = itemOfCategoriesList[i].firstElementChild;
+    console.log(`Категория: ${itemTitle.textContent}`);
 
-
-// for (let i = 0; i < categoriesList.children.length; i += 1) {
-    
-//     const itemsTitle = document.querySelectorAll('h2');
-//     const itemTitle = itemsTitle[i].textContent;
-//     const itemsSubList = document.querySelectorAll('.items > ul > li');
-//     console.log(`Категория: ${itemTitle}`);
-//     console.log(`Количество элементов: ${itemsSubList.length}`)
-
-    
-
-// }
-
-// console.log(`Категория: ${itemTitle.textContent}`);
-// console.log(itemTitle);
+    const categoriesSubList = itemOfCategoriesList[i].lastElementChild;
+    const subListItem = categoriesSubList.querySelectorAll('li');
+    console.log(`Количество элементов: ${subListItem.length}`);
+}
