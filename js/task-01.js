@@ -12,16 +12,16 @@
 Количество элементов: 4 */
 
 
-const categoriesList = document.querySelector('#categories');
-console.log(`В списке ${categoriesList.children.length} категории.`);
+const categories = document.querySelector('#categories');
+console.log(`В списке ${categories.children.length} категории.`);
 
-const itemOfCategoriesList = categoriesList.querySelectorAll('.item');
+const itemsOfCategories = categories.querySelectorAll('.item');
 
-for (let i = 0; i < itemOfCategoriesList.length; i += 1) {
-    const itemTitle = itemOfCategoriesList[i].firstElementChild;
+itemsOfCategories.forEach(item => {
+    const itemTitle = item.firstElementChild;
     console.log(`Категория: ${itemTitle.textContent}`);
 
-    const categoriesSubList = itemOfCategoriesList[i].lastElementChild;
+    const categoriesSubList = item.lastElementChild;
     const subListItem = categoriesSubList.querySelectorAll('li');
     console.log(`Количество элементов: ${subListItem.length}`);
-}
+})
