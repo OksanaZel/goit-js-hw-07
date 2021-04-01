@@ -1,0 +1,17 @@
+.gallery-list {
+  display: flex;
+  justify-content: space-around;
+
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-list__item {
+  list-style: none;
+}
+
+.gallery-list__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
