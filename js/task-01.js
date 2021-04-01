@@ -21,7 +21,7 @@ itemsOfCategories.forEach(item => {
     const itemTitle = item.firstElementChild;
     console.log(`Категория: ${itemTitle.textContent}`);
 
-    const categoriesSubList = item.lastElementChild;
-    const subListItem = categoriesSubList.querySelectorAll('li');
+    const SubList = item.lastElementChild;
+    const subListItem = SubList.querySelectorAll('li');
     console.log(`Количество элементов: ${subListItem.length}`);
 })
