@@ -16,10 +16,11 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients')
 console.log(ingredientsList);
 
-for (const ingredient of ingredients) {
+ingredients.map(ingredient => {
     const itemOfIngredientsList = document.createElement('li');
     itemOfIngredientsList.classList.add('ingredients-list__item');
     itemOfIngredientsList.textContent = `${ingredient}`;
     ingredientsList.appendChild(itemOfIngredientsList);
-}
+})
+
 
