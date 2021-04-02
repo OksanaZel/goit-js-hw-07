@@ -16,11 +16,22 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients')
 console.log(ingredientsList);
 
-ingredients.map(ingredient => {
-    const itemOfIngredientsList = document.createElement('li');
-    itemOfIngredientsList.classList.add('ingredients-list__item');
-    itemOfIngredientsList.textContent = `${ingredient}`;
-    ingredientsList.appendChild(itemOfIngredientsList);
-})
+const ingredientsEl = (ingredient) => {
+  const itemOfIngredientsList = document.createElement('li');
+  itemOfIngredientsList.classList.add('ingredients-list__item');
+  itemOfIngredientsList.textContent = `${ingredient}`;
+  
+  return ingredientsList.appendChild(itemOfIngredientsList);
+}
+
+ingredients.map(ingredientsEl);
+
+/* ====== Второй вариант ====== */
+// ingredients.map(ingredient => {
+//     const itemOfIngredientsList = document.createElement('li');
+//     itemOfIngredientsList.classList.add('ingredients-list__item');
+//     itemOfIngredientsList.textContent = `${ingredient}`;
+//     ingredientsList.appendChild(itemOfIngredientsList);
+// })
 
 
