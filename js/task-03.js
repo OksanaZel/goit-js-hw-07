@@ -29,16 +29,14 @@ const galleryList = document.querySelector('#gallery')
 galleryList.classList.add('gallery-list');
 console.log(galleryList);
 
-images.map(({ url, alt }) => {
-    const itemEl = document.createElement('li');
-    itemEl.classList.add('gallery-list__item');
-    
-    const imageEl = document.createElement('img');
-    imageEl.classList.add('gallery-list__img')
-    imageEl.src = `${url}`;
-    imageEl.alt = `${alt}`;
-    imageEl.width = 300;
-    
-    itemEl.appendChild(imageEl);
-    galleryList.appendChild(itemEl);
-})
+const imagesList = ({ url, alt }) => {
+  return `
+  <li class="gallery-list__item">
+    <img src="${url}" alt="${alt}" width = 350>
+  </li>`
+}
+
+const markup = images.map(imagesList).join('');
+
+galleryList.insertAdjacentHTML("beforeend", markup);
+
