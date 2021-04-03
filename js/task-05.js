@@ -6,15 +6,16 @@ const refs = {
     input: document.querySelector('#name-input'),
     output: document.querySelector('#name-output'),
 }
-console.log(refs.output);
- 
-refs.input.addEventListener('input', userName)
+
+refs.input.addEventListener('input', userName);
+const defaultValue = refs.output.textContent;
 
 function userName(event) {
+    console.log(event);
     refs.output.textContent = event.currentTarget.value;
-    
+
     if (!refs.output.textContent) {
-        refs.output.textContent = 'незнакомец';
+        refs.output.textContent = defaultValue;
     }
 }
 
