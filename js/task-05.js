@@ -8,6 +8,7 @@ const refs = {
 }
 
 refs.input.addEventListener('input', userName);
+
 const defaultValue = refs.output.textContent;
 
 function userName(event) {
