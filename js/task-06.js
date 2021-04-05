@@ -13,5 +13,6 @@ function onInputBlur() {
         input.classList.add('valid');
     } else {
         input.classList.add('invalid');
+        
     }
 }
