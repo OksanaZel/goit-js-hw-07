@@ -3,3 +3,11 @@ input#font-size-control (событие input) и изменяет инлайн-
 span#text обновляя свойство font-size. В результате при 
 перетаскивании ползунка будет меняться размер текста. */
 
+const input = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
+
+input.addEventListener('input', changeInput)
+
+function changeInput() {
+    text.style.fontSize = `${input.value}px`;
+}
