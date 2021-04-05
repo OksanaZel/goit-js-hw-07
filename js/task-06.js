@@ -5,24 +5,13 @@
 если неправильное - красным. */
 
 const input = document.querySelector('#validation-input');
-console.log(+input.dataset.length);
 
-input.addEventListener('input', inputSymbol);
+input.addEventListener('blur', onInputBlur);
 
-function inputSymbol(event) {
-    input.textContent = event.currentTarget.value;
-    // console.log(input.textContent.length)
-    if (input.textContent.length < input.dataset.length) {
-        input.classList.add('.invalid');
+function onInputBlur() {
+    if (input.value.length >= +input.dataset.length) {
+        input.classList.add('valid');
+    } else {
+        input.classList.add('invalid');
     }
 }
-
-// input.addEventListener('blur', onInputBlur);
-
-// function onInputBlur(event) {
-//     if (+input.dataset.length > 6) {
-//         input.classList.add('.valid');
-//     } else {
-//         input.classList.add('.invalid');
-//     }
-// }
