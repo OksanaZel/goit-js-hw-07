@@ -6,8 +6,8 @@ span#text обновляя свойство font-size. В результате �
 const input = document.querySelector('#font-size-control');
 const text = document.querySelector('#text');
 
-input.addEventListener('input', changeInput)
+input.addEventListener('input', changeFontSize);
 
-function changeInput() {
+function changeFontSize() {
     text.style.fontSize = `${input.value}px`;
 }
